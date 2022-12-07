@@ -2,6 +2,7 @@
   "name": "ga-test",
   "version": "1.0.0",
   "description": "test github actions",
+  "author":"Daniele Massi <danielemassi@gmail.com>",
   "private": true,
   "dependencies": {
     "@testing-library/jest-dom": "^5.14.1",
@@ -13,10 +14,13 @@
     "web-vitals": "^2.1.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
     "@types/jest": "^27.0.1",
     "@types/node": "^16.7.13",
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
+    "commitizen": "^4.2.5",
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-prefer-arrow": "^1.2.3",
     "prettier": "^2.0.5",
@@ -25,12 +29,18 @@
     "typescript": "^4.5.5"
   },
   "scripts": {
+    "commit": "git-cz",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "lint": "eslint -c .eslintrc.js --ext .ts \"src/**/*.{ts,tsx}\"",
     "test": "react-scripts test",
     "tests:unit:cov": "yarn test --coverage  --maxWorkers=2",
     "type-check": "tsc --noEmit"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-conventional-changelog"
+    }
   },
   "eslintConfig": {
     "extends": [
@@ -54,7 +64,6 @@
     "type": "git",
     "url": "git+https://github.com/doctorstones/ga-test.git"
   },
-  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/doctorstones/ga-test/issues"
